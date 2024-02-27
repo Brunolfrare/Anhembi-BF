@@ -47,4 +47,20 @@ public class Main {
                     visaoParticipacao.cancelarParticipacao();
                     break;
                 case 10
-
+                    visaoEvento.listarEventosProximos();
+                    break;
+                case 11:
+                    visaoEvento.listarEventosEmAndamento();
+                    break;
+                case 12:
+                    visaoEvento.listarEventosPassados();
+                    break;
+                case 13:
+                    System.out.println("Obrigado por usar o sistema!");
+                    System.exit(0);
+                default:
+                    System.out.println("Opção inválida!");
+            }
+        }
+    }
+}
