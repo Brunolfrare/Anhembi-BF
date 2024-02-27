@@ -1,0 +1,50 @@
+public class Main {
+
+    public static void main(String[] args) {
+        // Carregar eventos do arquivo
+        String eventosData = Util.lerArquivo("events.data");
+
+        // Criar controladores
+        ControleUsuario controleUsuario = new ControleUsuario();
+        ControleEvento controleEvento = new ControleEvento(eventosData);
+        ControleParticipacao controleParticipacao = new ControleParticipacao();
+
+        // Criar visões
+        VisaoUsuario visaoUsuario = new VisaoUsuario(controleUsuario);
+        VisaoEvento visaoEvento = new VisaoEvento(controleEvento);
+        VisaoParticipacao visaoParticipacao = new VisaoParticipacao(controleParticipacao);
+
+        // Iniciar menu principal
+        while (true) {
+            int opcao = Menu.mostrarMenuPrincipal();
+
+            switch (opcao) {
+                case 1:
+                    visaoUsuario.cadastrarUsuario();
+                    break;
+                case 2:
+                    visaoUsuario.buscarUsuario();
+                    break;
+                case 3:
+                    visaoUsuario.atualizarUsuario();
+                    break;
+                case 4:
+                    visaoEvento.cadastrarEvento();
+                    break;
+                case 5:
+                    visaoEvento.buscarEvento();
+                    break;
+                case 6:
+                    visaoEvento.atualizarEvento();
+                    break;
+                case 7:
+                    visaoEvento.listarEventos();
+                    break;
+                case 8:
+                    visaoParticipacao.confirmarParticipacao();
+                    break;
+                case 9:
+                    visaoParticipacao.cancelarParticipacao();
+                    break;
+                case 10
+
